@@ -1,6 +1,5 @@
-import ImageCard from '../../ImageCard/index'
-import PostDetails from '../../ImageCard/PostDetails'
-import ProductDetails from '../../ImageCard/ProductDetails'
+import PostCard from '../../PostCard'
+import ProductCard from '../../ProductCard'
 
 import './index.scss';
 
@@ -13,9 +12,8 @@ function GridItem({ itemDetails, itemType, btnColor }) {
 
   return (
     <div className={`grid__item${itemType === 'Products' ? ' grid__item--product' : ' grid__item--default'}`}>
-      <ImageCard thumbnail={thumbnail} altText={name} />
-      {itemType === 'Grid' && <PostDetails itemDetails={itemDetails} ctaText="Click for details" />}
-      {itemType === 'Products' && <ProductDetails itemDetails={itemDetails.products[0]} btnColor={btnColor} />}
+      {itemType === 'Grid' && <PostCard itemDetails={itemDetails} ctaText="Click for details" thumbnail={thumbnail} altText={name} />}
+      {itemType === 'Products' && <ProductCard itemDetails={itemDetails.products[0]} btnColor={btnColor} thumbnail={thumbnail} altText={name} />}
     </div>
   );
 }
