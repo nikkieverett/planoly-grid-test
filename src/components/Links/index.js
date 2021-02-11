@@ -11,26 +11,22 @@ const GET_LINKS = gql`
         title
         url
       }
-		}
+    }
   }
 `
 function Links({ username, btnColor }) {
-	const { loading, error, data } = useQuery(GET_LINKS, {
-    variables: {
-      username
-    },
-  });
+  const { loading, error, data } = useQuery(GET_LINKS, { variables: { username } });
 
   if (loading) return null;
   if (error) return `Error! ${error}`;
 
   return (
     <ul className="links">
-			{data.shoplink.links.map(link => (
+      {data.shoplink.links.map(link => (
         <li key={link.title} className="links__link">
           <Button btnText={link.title} url={link.url} bgColor={btnColor} className="links__link-btn" />
         </li>
-			))}
+      ))}
     </ul>
   );
 }

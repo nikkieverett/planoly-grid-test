@@ -36,7 +36,7 @@ function Featured({ username , btnColor }) {
         {data.shoplink.featuredData.map((featuredItem, index) => {
           if (index <= 1) {
             return (
-              <div className="featured__card">
+              <div className="featured__card" key={featuredItem.name}>
                 <div className="card">
                   <div className="photo">
                     <img src={featuredItem.thumbnailUrl} alt=""/>

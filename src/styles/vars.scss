@@ -1,7 +1,23 @@
+// Fonts
 $font-primary: 'Franklin Gothic Medium', 'Helvetica Neue', Arial, sans-serif;
 $font-secondary: 'Franklin Gothic Book', sans-serif;
 
+// Colors
 $color-white: #FFF;
 $color-black: #000;
 $color-light-gray: #FAFAFA;
+$color-medium-gray: #EEEEEE;
 $color-dark-gray: #8e8e93;
+
+// Box shadows
+$href-box-shadow: 0 2px 0 rgba($color-black, .2);
+$button-box-shadow: rgba($color-black, .5) 0 1px 5px;
+$card-box-shadow: 0 2px 5px 0 rgba($color-black, .16), 0 2px 10px 0 rgba($color-black, .12);
+
+// Featured
+$featured-drop-shadow:  drop-shadow(0 3px 6px rgba($color-black, .16));
+$featured-gradient: linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0) 40%, $color-white) bottom -1px left no-repeat;
+
+// Card
+$card-hover-color: hsla(0, 0%, 100%, .5);
+

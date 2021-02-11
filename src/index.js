@@ -8,15 +8,20 @@ import {
   createHttpLink,
   InMemoryCache
 } from '@apollo/client';
-// 2
+
 const httpLink = createHttpLink({
   uri: 'https://shoplink-graph.planoly.com/v1/graphql'
 });
 
-// 3
 const client = new ApolloClient({
   link: httpLink,
-  cache: new InMemoryCache()
+  cache: new InMemoryCache({
+    typePolicies:{
+      Shoplink: {
+        keyfields: false
+      }
+    }
+  })
 });
 
 ReactDOM.render(
@@ -28,7 +33,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your Page, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals(console.log);
+reportWebVitals(console.log);

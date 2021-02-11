@@ -1,4 +1,4 @@
-@import '../../../styles/vars.scss';
+@import '../../../styles/vars';
 
 .btn {
   align-items: center;
@@ -20,6 +20,6 @@
   width: 100%;
 
   &:hover {
-    box-shadow: rgba($color-black, .5) 0 1px 5px;
+    box-shadow: $button-box-shadow;
   }
 }

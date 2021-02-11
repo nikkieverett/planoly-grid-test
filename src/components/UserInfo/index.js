@@ -8,22 +8,20 @@ const GET_USER_INFO = gql`
       description
       pic
       username
-		}
+      id
+    }
   }
 `
+
 function UserInfo({ username }) {
-	const { loading, error, data } = useQuery(GET_USER_INFO, {
-    variables: {
-      username
-    },
-  });
+  const { loading, error, data } = useQuery(GET_USER_INFO, { variables: { username } });
 
   if (loading) return null;
   if (error) return `Error! ${error}`;
 
   return (
     <div className="user-info">
-			<div className="user-info__avatar">
+      <div className="user-info__avatar">
         <img src={data.shoplink.pic} alt="avatar" />
       </div>
       <div className="user-info__meta">

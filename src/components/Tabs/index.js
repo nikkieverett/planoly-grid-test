@@ -2,8 +2,7 @@ import { useState } from 'react'
 
 import './index.scss'
 
-
-function Tabs({ username, changeView }) {
+function Tabs({ changeView }) {
   const [activeTab, setActiveTab] = useState('Grid')
 
   const handleToggle = (selectedTab) => {

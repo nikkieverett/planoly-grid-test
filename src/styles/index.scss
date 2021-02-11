@@ -1,15 +1,16 @@
-@import './vars.scss';
+@import './vars';
+@import './reset';
 
 * {
   font-family: $font-primary;
 }
 
 a {
-  color: black;
+  color: $color-black;
   text-decoration: none;
   transition: box-shadow .25s;
 
   &:hover {
-    box-shadow: 0 2px 0 rgba($color-black, .2);
+    box-shadow: $href-box-shadow;
   }
 }

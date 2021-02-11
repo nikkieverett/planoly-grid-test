@@ -3,7 +3,7 @@ import './index.scss'
 function Page({ children }) {
   return (
       <div className="page">
-				{children}
+        {children}
       </div>
   );
 }

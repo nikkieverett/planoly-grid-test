@@ -1,7 +1,7 @@
-@import '../../../styles/vars.scss';
+@import '../../../styles/vars';
 
 .page {
-	max-width: 960px;
-	margin: 0 auto;
-	background-color: $color-white;
+  background-color: $color-white;
+  margin: 0 auto;
+  max-width: 960px;
 }

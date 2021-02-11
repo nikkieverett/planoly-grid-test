@@ -8,7 +8,6 @@ import Links from './Links'
 import Tabs from './Tabs'
 import Featured from './Featured'
 import GridContainer from './Grid/GridContainer'
-import Error from './Layout/Page/Error'
 import Loading from './Layout/Page/Loading'
 import Page from './Layout/Page/index'
 
@@ -17,6 +16,7 @@ import '../styles/index.scss'
 const GET_PAGE_DATA = gql`
   query($username: String!) {
     shoplink(username: $username) {
+      id
       buttonHexColor
       showFeatured
       showPostsTab
@@ -46,7 +46,7 @@ function App() {
   const [currentView, setCurrentView] = useState('Grid')
 
   if (loading) return <Loading />;
-  if (error) return <Error />;
+  if (error) return <div>Error: {error}</div>;
 
   const { buttonHexColor, showFeatured, showProductsTab } = data.shoplink
 
