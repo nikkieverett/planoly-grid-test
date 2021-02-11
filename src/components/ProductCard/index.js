@@ -1,4 +1,4 @@
-import Button from '../Inputs/Button'
+import Button from '../Buttons/Button'
 
 function ProductCard({ thumbnail, altText, itemDetails, btnColor  }) {
 	const { buyUrl, name, price } = itemDetails

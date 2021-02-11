@@ -1,6 +1,10 @@
 import { useState } from 'react'
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
+// Queries
+import { GET_PAGE_DATA } from '../helpers/queries'
+
+// Components
 import UserInfo from './UserInfo'
 import Header from './Layout/Header'
 import Main from './Layout/Main'
@@ -11,35 +15,8 @@ import GridContainer from './Grid/GridContainer'
 import Loading from './Layout/Page/Loading'
 import Page from './Layout/Page/index'
 
+// Styles
 import '../styles/index.scss'
-
-const GET_PAGE_DATA = gql`
-  query($username: String!) {
-    shoplink(username: $username) {
-      id
-      buttonHexColor
-      showFeatured
-      showPostsTab
-      showProductsTab
-      posts {
-        data {
-          id
-          assets {
-            mediumUrl
-          }
-          caption
-          products {
-            thumbnailUrl
-            name
-            id
-            price
-            buyUrl
-          }
-        }
-      }
-    }
-  }
-`
 
 function App() {
   const username = 'megyalook'

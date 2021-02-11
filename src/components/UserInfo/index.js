@@ -1,17 +1,10 @@
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
+// Queries
+import { GET_USER_INFO } from '../../helpers/queries'
+
+// Styles
 import './index.scss'
-
-const GET_USER_INFO = gql`
-  query($username: String!) {
-    shoplink(username: $username) {
-      description
-      pic
-      username
-      id
-    }
-  }
-`
 
 function UserInfo({ username }) {
   const { loading, error, data } = useQuery(GET_USER_INFO, { variables: { username } });

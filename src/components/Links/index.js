@@ -1,19 +1,14 @@
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
-import Button from '../Inputs/Button'
+// Queries
+import { GET_LINKS } from '../../helpers/queries'
 
+// Components
+import Button from '../Buttons/Button'
+
+// Styles
 import './index.scss'
 
-const GET_LINKS = gql`
-  query($username: String!) {
-    shoplink(username: $username) {
-      links {
-        title
-        url
-      }
-    }
-  }
-`
 function Links({ username, btnColor }) {
   const { loading, error, data } = useQuery(GET_LINKS, { variables: { username } });
 

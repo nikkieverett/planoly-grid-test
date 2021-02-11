@@ -1,4 +1,4 @@
-import IconButton from '../Inputs/IconButton'
+import IconButton from '../Buttons/IconButton'
 
 function PostCard({ thumbnail, altText, itemDetails, ctaText }) {
   return (
