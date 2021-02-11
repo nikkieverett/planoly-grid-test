@@ -1,17 +1,21 @@
-import IconButton from '../../Inputs/IconButton/index'
+import ImageCard from '../../ImageCard/index'
+import PostDetails from '../../ImageCard/PostDetails'
+import ProductDetails from '../../ImageCard/ProductDetails'
 
 import './index.scss';
 
-function GridItem({ gridItemDetails, gridItemCtaText }) {
-  const thumbnail = gridItemDetails.assets[0].mediumUrl
+function GridItem({ itemDetails, itemType, btnColor }) {
+  const { assets, name } = itemDetails
+  const thumbnail = assets[0].mediumUrl
+  if (itemType === 'Products' && !itemDetails.products) {
+    return ''
+  }
 
   return (
-    <div className="grid__item">
-      <div className="grid__item-inner">
-        <img src={thumbnail} alt={gridItemDetails.caption} className="grid__item-image" />
-      </div>
-      {gridItemDetails.products && <IconButton iconType="shopping" bgColor="white" />}
-      {gridItemCtaText && <button className="grid__item-button">{gridItemCtaText}</button>}
+    <div className={`grid__item${itemType === 'Products' ? ' grid__item--product' : ' grid__item--default'}`}>
+      <ImageCard thumbnail={thumbnail} altText={name} />
+      {itemType === 'Grid' && <PostDetails itemDetails={itemDetails} ctaText="Click for details" />}
+      {itemType === 'Products' && <ProductDetails itemDetails={itemDetails.products[0]} btnColor={btnColor} />}
     </div>
   );
 }

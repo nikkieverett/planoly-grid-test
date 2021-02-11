@@ -33,6 +33,7 @@ const GET_PAGE_DATA = gql`
             name
             id
             price
+            buyUrl
           }
         }
       }
@@ -50,8 +51,6 @@ function App() {
 
   const { buttonHexColor, showFeatured, showProductsTab } = data.shoplink
 
-  // Could use 'currentView' to determine which data set to pass to grid container
-
   return (
     <Page>
       <Header>
@@ -61,7 +60,7 @@ function App() {
         <Links username={username} btnColor={buttonHexColor} />
         {showFeatured && <Featured username={username} btnColor={buttonHexColor} />}
         {showProductsTab && <Tabs username={username} changeView={setCurrentView} />}
-        <GridContainer gridItems={data.shoplink.posts.data}  />
+        <GridContainer gridItems={data.shoplink.posts.data} gridType={currentView} btnColor={buttonHexColor}  />
       </Main>
     </Page>
   );

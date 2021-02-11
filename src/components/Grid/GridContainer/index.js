@@ -2,11 +2,11 @@ import GridItem from '../GridItem/index'
 
 import './index.scss'
 
-const GridContainer = ({ gridItems }) => {
+const GridContainer = ({ gridItems, gridType, btnColor }) => {
   return (
     <div className="grid">
       {gridItems.map(item => (
-        <GridItem gridItemDetails={item} gridItemCtaText="Click for Details" key={item.id} />
+        <GridItem itemDetails={item} itemType={gridType} key={item.id} btnColor={btnColor} />
       ))}
     </div>
   );
