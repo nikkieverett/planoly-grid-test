@@ -115,3 +115,19 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .grid__item {
+    flex-basis: 50%;
+    max-width: 50%;
+    width: 50%;
+
+    &--default {
+      min-height: 180px;
+
+      .grid__item-inner {
+        border-radius: 3px;
+      }
+    }
+  }
+}

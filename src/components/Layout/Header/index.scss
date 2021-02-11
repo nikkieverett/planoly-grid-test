@@ -2,3 +2,9 @@
   margin: 10px auto 0;
   max-width: 960px;
 }
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px;
+  }
+}
