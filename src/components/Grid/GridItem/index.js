@@ -1,4 +1,4 @@
-import IconButton from '../../../Inputs/IconButton/index'
+import IconButton from '../../Inputs/IconButton/index'
 
 import './index.scss';
 

@@ -1,0 +1,40 @@
+.user-info {
+	display: flex;
+	align-items: center;
+
+	&__avatar {
+		display: flex;
+    flex: 0 0 75px;
+    height: 75px;
+    position: relative;
+    border-radius: 50%;
+    margin-right: 15px;
+    background: url('https://components.planoly.com/assets/images/default-profile.svg');
+    transition: filter .2s;
+		overflow: hidden;
+	}
+
+	&__meta {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+
+		&-username {
+			align-self: flex-start;
+			color: #000;
+			letter-spacing: .1em;
+			margin: 0;
+			max-width: 100%;
+			padding: 0;
+			font-weight: 400;
+			letter-spacing: 1.96;
+			font-size: 19px;
+		}
+
+		&-description {
+			font-size: 14px;
+			line-height: 1.4;
+			margin: 0;
+		}
+	}
+}

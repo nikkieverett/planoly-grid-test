@@ -1,3 +1,15 @@
-$primary-color: #CCA361;
-$card-box-shadow: 0 2px 5px 0 rgba(0,0, 0, .16), 0 2px 10px 0 rgba(0,0,0,.12);
+@import './vars.scss';
 
+* {
+  font-family: $font-primary;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  transition: box-shadow .25s;
+
+  &:hover {
+    box-shadow: 0 2px 0 rgba($color-black, .2);
+  }
+}

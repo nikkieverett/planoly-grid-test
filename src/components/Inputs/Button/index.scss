@@ -1,0 +1,25 @@
+@import '../../../styles/vars.scss';
+
+.btn {
+  align-items: center;
+  border: 0;
+  border-radius: 4px;
+  color: $color-white;
+  display: flex;
+  flex: 1 1 0%;
+  font-size: 14px;
+  font-weight: 400;
+  height: 36px;
+  justify-content: center;
+  letter-spacing: .1em;
+  margin: 0 10px;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: box-shadow .25s ease 0s;
+  width: 100%;
+
+  &:hover {
+    box-shadow: rgba($color-black, .5) 0 1px 5px;
+  }
+}

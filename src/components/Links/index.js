@@ -2,6 +2,8 @@ import { useQuery, gql } from '@apollo/client';
 
 import Button from '../Inputs/Button'
 
+import './index.scss'
+
 const GET_LINKS = gql`
   query($username: String!) {
     shoplink(username: $username) {
@@ -21,14 +23,15 @@ function Links({ username, btnColor }) {
 
   if (loading) return null;
   if (error) return `Error! ${error}`;
-  console.log(data)
 
   return (
-    <div className="links">
+    <ul className="links">
 			{data.shoplink.links.map(link => (
-				<Button btnText={link.title} url={link.url} btnColor={btnColor} key={link.title} />
+        <li key={link.title} className="links__link">
+          <Button btnText={link.title} url={link.url} bgColor={btnColor} className="links__link-btn" />
+        </li>
 			))}
-    </div>
+    </ul>
   );
 }
 
