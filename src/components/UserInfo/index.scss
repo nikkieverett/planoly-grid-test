@@ -24,15 +24,18 @@
     &-username {
       align-self: flex-start;
       color: $color-black;
+      font-family: $font-secondary;
       font-size: 19px;
       font-weight: 400;
-      letter-spacing: .1em;
+      letter-spacing: 1.96px;
       margin: 0;
       max-width: 100%;
       padding: 0;
+      line-height: normal;
     }
 
     &-description {
+      font-family: $font-secondary;
       font-size: 14px;
       line-height: 1.4;
       margin: 0;
