@@ -1,23 +1,13 @@
-import { useState } from 'react'
-
 import './index.scss'
 
-function Tabs({ changeView }) {
-  const [activeTab, setActiveTab] = useState('Grid')
-
-  const handleToggle = (selectedTab) => {
-    setActiveTab(selectedTab)
-    changeView(selectedTab)
-  }
-
+function Tabs({ handleClick, tabContent }) {
   return (
     <ul className="tabs">
-      <li className={`tabs__tab${activeTab === 'Grid' ? ' selected' : ''}`} onClick={() => handleToggle('Grid')}>
-        <span>Grid</span>
-      </li>
-      <li className={`tabs__tab${activeTab === 'Products' ? ' selected' : ''}`} onClick={() => handleToggle('Products')}>
-        <span>Products</span>
-      </li>
+      {tabContent.tabs.map(tabName => (
+        <li key={tabName} className={`tabs__tab${tabName === tabContent.activeTab ? ' selected' : ''}`} onClick={() => handleClick(tabName)}>
+          <span>{tabName}</span>
+        </li>
+      ))}
     </ul>
   );
 }
